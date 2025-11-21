@@ -1,5 +1,8 @@
-#!/usr/bin/env python3
-# Lists all documents in a MongoDB collection
+#!/usr/bin/python3
+""" inserts a new document in a collection """
 
-def list_all(mongo_collection):
-    return list(mongo_collection.find())
+
+def insert_school(mongo_collection, **kwargs):
+    """returns newly inserted school id"""
+    result = mongo_collection.insert_one(kwargs)
+    return result.inserted_id
